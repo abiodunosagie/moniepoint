@@ -29,6 +29,13 @@
 		<key>UIMainStoryboardFile</key>
 		<string>Main</string>
 		<key>UISupportedInterfaceOrientations</key>
+		<key>NSAppleMusicUsageDescription</key>
+		<string>Checkes ios permission</string>
+		<key>LSApplicationQueriesSchemes</key>
+        <array>
+          <string>sms</string>
+          <string>tel</string>
+        </array>
 		<array>
 			<string>UIInterfaceOrientationPortrait</string>
 			<string>UIInterfaceOrientationLandscapeLeft</string>

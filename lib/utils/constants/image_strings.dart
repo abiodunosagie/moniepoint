@@ -41,6 +41,7 @@ class TImages {
       "assets/icons/categories/icons8-smartphone-64.png";
 
   // -- Brand Icons
+  static const String nigerianFlag = "assets/images/banners/flat.png";
   static const String nikeLogo = "assets/icons/brands/nike.png";
   static const String adidasLogo = "assets/icons/brands/adidas-logo.png";
   static const String appleLogo = "assets/icons/brands/apple-logo.png";

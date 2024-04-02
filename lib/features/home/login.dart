@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:intl_phone_number_field/intl_phone_number_field.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 import 'package:t_store/utils/constants/text_strings.dart';
 import 'package:t_store/utils/helpers/helper_functions.dart';
+
+import 'forgot_password.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -46,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: TSizes.spaceBtwItems,
               ),
               Container(
-                height: 250,
+                height: MediaQuery.of(context).size.height * 0.25,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: TColors.white,
@@ -54,10 +57,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 40,
+                    horizontal: 20,
+                    vertical: 20,
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       // Login with options
                       Row(
@@ -146,12 +150,34 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                       // Phone number input section
-                      const SizedBox(
-                        height: TSizes.spaceBtwItems,
+                      Container(
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.06,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: TColors.buttonDisabled,
+                        ),
+                        child: InternationalPhoneNumberInput(
+                          height: 50,
+                          inputFormatters: const [],
+                          formatter: MaskedInputFormatter('### ### ### ##'),
+                          initCountry: CountryCodeModel(
+                              name: "Nigeria", dial_code: "+234", code: "NG"),
+                          phoneConfig: PhoneConfig(
+                            borderWidth: 0,
+                            backgroundColor: TColors.buttonDisabled,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 0,
+                                color: TColors.buttonDisabled,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                       // Next button
                       SizedBox(
@@ -171,11 +197,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: TSizes.spaceBtwSections,
               ),
               Center(
-                child: Text(
-                  TTexts.forgetPassword,
-                  style: Theme.of(context).textTheme.bodyLarge!.apply(
-                        color: TColors.primary,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotPassword(),
                       ),
+                    );
+                  },
+                  child: Text(
+                    TTexts.forgetPassword,
+                    style: Theme.of(context).textTheme.bodyLarge!.apply(
+                          color: TColors.primary,
+                        ),
+                  ),
                 ),
               ),
             ],

@@ -3,7 +3,6 @@ import 'package:t_store/utils/helpers/helper_functions.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
-import 'dot_navigation.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({
@@ -54,12 +53,6 @@ class OnboardingPage extends StatelessWidget {
         ),
         const SizedBox(
           height: TSizes.defaultSpace,
-        ),
-
-        /// dot navigation
-        const OnboardingDotNavigation(),
-        const SizedBox(
-          height: TSizes.defaultSpace * 2,
         ),
       ],
     );

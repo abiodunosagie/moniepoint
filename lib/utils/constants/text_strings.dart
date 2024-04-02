@@ -29,6 +29,7 @@ class TTexts {
 
   // -- Authentication Forms
   static const String firstName = "First Name";
+  static const String usernameRecovery = "Username Recovery";
   static const String lastName = "Last Name";
   static const String email = "E-Mail";
   static const String password = "Password";
@@ -36,7 +37,7 @@ class TTexts {
   static const String username = "Username";
   static const String phoneNo = "Phone No";
   static const String rememberMe = "Remember Me";
-  static const String forgetPassword = "Forget Password?";
+  static const String forgetPassword = "Forgot Password?";
   static const String signIn = "Login";
   static const String createAccount = "Sign Up";
   static const String orSignInWith = "or sign in with";
@@ -48,9 +49,12 @@ class TTexts {
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend email in";
   static const String loginButtonText = "Next";
+  static const String recoveryPhoneDial = "*5573*73*1#";
 
   // -- Authentication Headings
   static const String loginTitle = "Log in to your account";
+  static const String usernameSubTitle =
+      "Dial the code below from your registered phone number to recover your username";
   static const String loginRow = "Login With";
   static const String loginSubTitle =
       "Discover Limitless Choices and Unmatched Convenience.";
