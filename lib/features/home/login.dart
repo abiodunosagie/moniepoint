@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: MediaQuery.of(context).size.height * 0.25,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: TColors.white,
+                  color: dark ? TColors.darkContainerCustom : TColors.white,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Padding(
@@ -183,9 +183,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                dark ? TColors.secondary : TColors.primary,
+                            side: const BorderSide(color: Colors.transparent),
+                          ),
                           onPressed: () {},
-                          child: const Text(
+                          child: Text(
                             TTexts.loginButtonText,
+                            style: Theme.of(context).textTheme.bodyLarge!.apply(
+                                color:
+                                    dark ? TColors.darkerGrey : TColors.white),
                           ),
                         ),
                       ),
