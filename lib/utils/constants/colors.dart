@@ -21,6 +21,7 @@ class TColors {
   static const Color lightContainer = Color(0xFFF6F6F6);
   static const Color darkContainerCustom = Color(0xFFF0e1a32);
   static const Color darkGreyContainer = Color(0xFFF19212c);
+  static const Color darkGreyPhone = Color(0xFFF1a263e);
   static Color darkContainer = TColors.white.withOpacity(0.1);
 
   // Button colors

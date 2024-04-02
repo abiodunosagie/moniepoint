@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:intl_phone_number_field/intl_phone_number_field.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -74,14 +73,19 @@ class _LoginScreenState extends State<LoginScreen> {
                           Row(
                             children: [
                               Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
                                 height: 30,
                                 width: 100,
                                 decoration: BoxDecoration(
-                                  color: TColors.primary,
+                                  color: dark
+                                      ? TColors.secondary
+                                      : TColors.primary,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
                                     Icon(
                                       Iconsax.call,
@@ -89,9 +93,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                           ? TColors.buttonDisabledDark
                                           : TColors.white,
                                       size: 15,
-                                    ),
-                                    const SizedBox(
-                                      width: 10,
                                     ),
                                     FittedBox(
                                       child: Text(
@@ -102,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             .copyWith(
                                               fontSize: 10,
                                               color: dark
-                                                  ? TColors.buttonDisabledDark
+                                                  ? TColors.darkerGrey
                                                   : TColors.white,
                                             ),
                                         overflow: TextOverflow.ellipsis,
@@ -115,19 +116,24 @@ class _LoginScreenState extends State<LoginScreen> {
                                 width: TSizes.spaceBtwItems,
                               ),
                               Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
                                 height: 30,
                                 width: 100,
                                 decoration: BoxDecoration(
-                                  color: TColors.buttonDisabled,
+                                  color: dark
+                                      ? TColors.darkerGrey
+                                      : TColors.buttonDisabled,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
                                     Icon(
                                       Iconsax.user,
                                       color: dark
-                                          ? TColors.darkGrey
+                                          ? TColors.white
                                           : TColors.buttonDisabledDark,
                                       size: 15,
                                     ),
@@ -142,7 +148,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                             .bodyLarge!
                                             .copyWith(
                                                 fontSize: 10,
-                                                color: TColors.darkGrey),
+                                                color: dark
+                                                    ? TColors.lightGrey
+                                                    : TColors.darkGrey),
                                         overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
@@ -155,28 +163,61 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       // Phone number input section
                       Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
                         width: double.infinity,
                         height: MediaQuery.of(context).size.height * 0.06,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: TColors.buttonDisabled,
+                          color: dark
+                              ? TColors.darkGreyPhone
+                              : TColors.buttonDisabled,
                         ),
-                        child: InternationalPhoneNumberInput(
-                          height: 50,
-                          inputFormatters: const [],
-                          formatter: MaskedInputFormatter('### ### ### ##'),
-                          initCountry: CountryCodeModel(
-                              name: "Nigeria", dial_code: "+234", code: "NG"),
-                          phoneConfig: PhoneConfig(
-                            borderWidth: 0,
-                            backgroundColor: TColors.buttonDisabled,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                width: 0,
-                                color: TColors.buttonDisabled,
-                              ),
+                        child: Row(
+                          children: [
+                            Row(
+                              children: [
+                                const Image(
+                                  width: 35,
+                                  height: 35,
+                                  image: AssetImage(
+                                    TImages.nigerianFlag,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: TSizes.spaceBtwItems,
+                                ),
+                                Text(
+                                  '+234',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .apply(
+                                        color: TColors.white.withOpacity(0.5),
+                                      ),
+                                ),
+                              ],
                             ),
-                          ),
+                            const SizedBox(
+                              width: TSizes.spaceBtwItems,
+                            ),
+                            Expanded(
+                              child: TextField(
+                                keyboardType: TextInputType.number,
+                                decoration: InputDecoration(
+                                  focusedBorder: InputBorder.none,
+                                  border: InputBorder.none,
+                                  hintText: "Phone number",
+                                  hintStyle: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .apply(
+                                          color: dark
+                                              ? TColors.darkGrey
+                                              : TColors.darkerGrey),
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       ),
                       // Next button
@@ -217,7 +258,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     TTexts.forgetPassword,
                     style: Theme.of(context).textTheme.bodyLarge!.apply(
-                          color: TColors.primary,
+                          color: dark ? TColors.secondary : TColors.primary,
                         ),
                   ),
                 ),
