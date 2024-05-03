@@ -43,7 +43,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       width: 150,
                       height: 100,
                       image: AssetImage(
-                        dark ? TImages.darkAppLogo : TImages.lightAppLogo,
+                        dark
+                            ? TImages.spotifyLogoDark
+                            : TImages.spotifyLogoLight,
                       ),
                     ),
                   ),
@@ -53,27 +55,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       onPageChanged: controller.updatePageIndicator,
                       children: const [
                         OnboardingPage(
-                          image: TImages.onBoardingImage1,
+                          image: TImages.vibesBoy,
                           title: TTexts.onBoardingTitle1,
                           subTitle: TTexts.onBoardingSubTitle1,
                         ),
                         OnboardingPage(
-                          image: TImages.onBoardingImage2,
+                          image: TImages.vibesMan,
                           title: TTexts.onBoardingTitle2,
                           subTitle: TTexts.onBoardingSubTitle2,
                         ),
                         OnboardingPage(
-                          image: TImages.onBoardingImage3,
+                          image: TImages.equalizerGreen,
                           title: TTexts.onBoardingTitle3,
                           subTitle: TTexts.onBoardingSubTitle3,
                         ),
                         OnboardingPage(
-                          image: TImages.onBoardingImage4,
+                          image: TImages.musicDropDown,
                           title: TTexts.onBoardingTitle4,
                           subTitle: TTexts.onBoardingSubTitle4,
                         ),
                         OnboardingPage(
-                          image: TImages.onBoardingImage5,
+                          image: TImages.speakerAnimation,
                           title: TTexts.onBoardingTitle5,
                           subTitle: TTexts.onBoardingSubTitle5,
                         ),
@@ -97,12 +99,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: ElevatedButton(
                           onPressed: () {
                             // Handle login button press
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const LoginScreen(),
-                              ),
-                            );
+                            Get.off(() => const LoginScreen());
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: dark
@@ -132,12 +129,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: ElevatedButton(
                           onPressed: () {
                             // Handle signup button press
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SignUpScreen(),
-                              ),
-                            );
+                            Get.off(() => const SignUpScreen());
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor:

@@ -9,23 +9,22 @@ class TTexts {
   static const String tContinue = "Continue";
 
   // -- OnBoarding Texts
-  static const String onBoardingTitle1 = "Get a debit card that \nalways works";
-  static const String onBoardingTitle2 = "Send and receive \n money with ease";
-  static const String onBoardingTitle3 = "fast and easy way to \n pay anywhere";
-  static const String onBoardingTitle4 =
-      "Buy Airtime and Data in \n a few clicks";
-  static const String onBoardingTitle5 = "Pay Bills";
+  static const String onBoardingTitle1 = "Discover Your Groove";
+  static const String onBoardingTitle2 = "Timeless Melodies";
+  static const String onBoardingTitle3 = "Feel the Music Pulse";
+  static const String onBoardingTitle4 = "Curated Playlists, Just for You";
+  static const String onBoardingTitle5 = "Immerse Yourself";
 
   static const String onBoardingSubTitle1 =
-      "Withdraw cash and make payments anywhere securely";
+      "Explore endless beats and tunes tailored just for you.";
   static const String onBoardingSubTitle2 =
-      "From anyone and to anyone in seconds";
+      "From classics to new hits, enjoy music that transcends generations.";
   static const String onBoardingSubTitle3 =
-      "Pay with transfer or card at your favourite \n Monipoint merchants in a blink of an eye";
+      "Visualize the rhythm with our dynamic equalizer display.";
   static const String onBoardingSubTitle4 =
-      "Recharge your pone seamlessly anytime";
+      "Personalized collections to match every mood and moment.";
   static const String onBoardingSubTitle5 =
-      "Don\'t get cut off on your TV or Electricity \n connecitons. Pay your bills on time seamlessly";
+      "Experience the full power of sound with crystal-clear audio.";
 
   // -- Authentication Forms
   static const String firstName = "First Name";
@@ -81,4 +80,10 @@ class TTexts {
   // -- Home
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Taimoor Sikander";
+
+  // -- Music App Home Text
+  static const String appTitle = "Beats";
+  static const String musicTitle = "Music Name";
+  static const String musicSubTitle = "Artist Name";
+  static const String musicLeadingText = "Artist Name";
 }

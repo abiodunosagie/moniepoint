@@ -7,6 +7,11 @@ class TImages {
   static const String lightAppLogo = "assets/logo/onboardinglogo.png";
   static const String iconAppLogo = "assets/logo/moniepointlogo.png";
   static const String brandingLogo = "assets/logo/branding.png";
+  static const String spotifyIconDark =
+      "assets/logo/spotify_icon_light_two.png";
+  static const String spotifyLogoDark = "assets/logo/spotify_logo_dark.png";
+  static const String spotifyLogoLight = "assets/logo/spotify_logo_light.png";
+  static const String spotifyIconLight = "assets/logo/spotify_icon_light.png";
   static const String loginLogoLightAndDark = "assets/logo/loginLogoLight.png";
 
   // -- Social Logos
@@ -19,7 +24,13 @@ class TImages {
   static const String peopleTalking = "assets/animation/peopletalking.json";
   static const String sleepingCat = "assets/animation/sleepingcat.json";
   static const String wateringMoney = "assets/animation/wateringmoney.json";
+  static const String vibesMan = "assets/animation/vibes_man.json";
+  static const String vibesBoy = "assets/animation/vibing_boy.json";
   static const String workingman = "assets/animation/workingman.json";
+  static const String speakerAnimation =
+      "assets/animation/speaker_animation.json";
+  static const String musicDropDown = "assets/animation/music_dropdown.json";
+  static const String equalizerGreen = "assets/animation/equalizer_green.json";
 
   // -- Category Icons
   static const String sportIcon =

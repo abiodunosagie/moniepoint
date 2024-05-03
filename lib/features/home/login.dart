@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/features/home/home.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/constants/sizes.dart';
@@ -33,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 60,
                   width: 60,
                   image: AssetImage(
-                    TImages.loginLogoLightAndDark,
+                    TImages.spotifyIconLight,
                   ),
                 ),
               ),
@@ -229,7 +231,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 dark ? TColors.secondary : TColors.primary,
                             side: const BorderSide(color: Colors.transparent),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.off(() => const HomeScreen());
+                          },
                           child: Text(
                             TTexts.loginButtonText,
                             style: Theme.of(context).textTheme.bodyLarge!.apply(
