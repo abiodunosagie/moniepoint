@@ -214,10 +214,10 @@ class UserRepository {
         //
         // json.decode() converts it to Map:
         // {'id':1,'name':'John','email':'john@example.com'}
-        final Map<String, dynamic> json = json.decode(response.body) as Map<String, dynamic>;
+        final Map<String, dynamic> jsonData = json.decode(response.body) as Map<String, dynamic>;
 
         // Convert Map to User object using fromJson factory
-        return User.fromJson(json);
+        return User.fromJson(jsonData);
       } else if (response.statusCode == 404) {
         // User not found
         throw Exception('User with ID $id not found');
@@ -289,8 +289,8 @@ class UserRepository {
       // Status code 201 = Created successfully
       if (response.statusCode == 201) {
         // SUCCESS! Parse the created user from response
-        final Map<String, dynamic> json = json.decode(response.body) as Map<String, dynamic>;
-        return User.fromJson(json);
+        final Map<String, dynamic> jsonData = json.decode(response.body) as Map<String, dynamic>;
+        return User.fromJson(jsonData);
       } else {
         throw Exception('Failed to create user. Status code: ${response.statusCode}');
       }
@@ -335,8 +335,8 @@ class UserRepository {
       );
 
       if (response.statusCode == 200) {
-        final Map<String, dynamic> json = json.decode(response.body) as Map<String, dynamic>;
-        return User.fromJson(json);
+        final Map<String, dynamic> jsonData = json.decode(response.body) as Map<String, dynamic>;
+        return User.fromJson(jsonData);
       } else {
         throw Exception('Failed to update user. Status code: ${response.statusCode}');
       }
@@ -381,8 +381,8 @@ class UserRepository {
       );
 
       if (response.statusCode == 200) {
-        final Map<String, dynamic> json = json.decode(response.body) as Map<String, dynamic>;
-        return User.fromJson(json);
+        final Map<String, dynamic> jsonData = json.decode(response.body) as Map<String, dynamic>;
+        return User.fromJson(jsonData);
       } else {
         throw Exception('Failed to patch user. Status code: ${response.statusCode}');
       }
